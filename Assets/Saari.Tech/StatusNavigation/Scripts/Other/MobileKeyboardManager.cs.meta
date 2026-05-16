@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f7d3e9a0780ea4a4987df264b91ae9c7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: badec3476304172f49f0f60239cbbc77, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187818
+  packageName: Mobile Status & Navigation bar
+  packageVersion: 1.330.1r0
+  assetPath: Assets/Saari.Tech/StatusNavigation/Scripts/Other/MobileKeyboardManager.cs
+  uploadId: 914276

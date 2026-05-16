@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 57a3de04404925f4e8fdaba8d1242839
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187818
+  packageName: Mobile Status & Navigation bar
+  packageVersion: 1.330.1r0
+  assetPath: Assets/Saari.Tech/StatusNavigation/Demo/Scripts/UIStatusNavigationDemo_Static.cs
+  uploadId: 914276

@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 3f2c0d52e7e3cf349b667d55dd9ead96
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Android: Android
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187818
+  packageName: Mobile Status & Navigation bar
+  packageVersion: 1.330.1r0
+  assetPath: Assets/Plugins/Android/UIStatusNavigationBar2.aar
+  uploadId: 914276

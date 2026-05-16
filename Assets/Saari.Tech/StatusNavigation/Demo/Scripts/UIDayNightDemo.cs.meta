@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e310b2874d31ca34aa5ece475a90dacf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187818
+  packageName: Mobile Status & Navigation bar
+  packageVersion: 1.330.1r0
+  assetPath: Assets/Saari.Tech/StatusNavigation/Demo/Scripts/UIDayNightDemo.cs
+  uploadId: 914276
