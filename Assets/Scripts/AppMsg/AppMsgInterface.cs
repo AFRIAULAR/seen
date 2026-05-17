@@ -12,7 +12,6 @@ public class AppMsgInterface : MonoBehaviour
     private void OnEnable()
     {
         PanelChatScript.OnPanelActivo += AbrirChat;
-        CelularManagent.celularInstancia.CambiarPantalla(pantallaListaChat);
     }
     private void OnDisable()
     {
@@ -20,24 +19,35 @@ public class AppMsgInterface : MonoBehaviour
     }
     public void Volver()
     {
-        // CargarListaChat();
+        if (CelularManagent.celularInterface.HistorialPantallasApp.Count > 1)
+        {
+            CelularManagent.celularInterface.RetrocederPantalla();
+        }
+        else
+        {
+            CelularManagent.celularInterface.LimpiarHistorial();
+            AbrirInicio();
+        }
         
-        CelularManagent.celularInstancia.LimpiarHistorial();
-        CelularManagent.celularInstancia.CambiarPantalla(pantallaListaChat);
+    }
+    public void AbrirInicio()
+    {
+        CelularManagent.celularInterface.CambiarPantalla(pantallaListaChat);
         pantallaChat.SetActive(false);
         pantallaListaChat.SetActive(true);
-    }
-    public void AbrirChat(string nombre)
-    {
-        Debug.Log($"[CLICK DETECTADO] Cargando conversación de: {nombre}");
-        CelularManagent.celularInstancia.CambiarPantalla(pantallaChat);
-        CargarChat(nombre);
-        pantallaListaChat.SetActive(false);
-        pantallaChat.SetActive(true);
     }
     public void CargarListaChat()
     {
         // Deberia cargar la lista de chat de forma dinamica, puede que este metodo deba ir al AppMsgManagent
+        
+    }
+    public void AbrirChat(string nombre)
+    {
+        Debug.Log($"[CLICK DETECTADO] Cargando conversación de: {nombre}");
+        CelularManagent.celularInterface.CambiarPantalla(pantallaChat);
+        CargarChat(nombre);
+        pantallaListaChat.SetActive(false);
+        pantallaChat.SetActive(true);
     }
     public void CargarChat(string nombre)
     {

@@ -1,20 +1,32 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CelularInterface : MonoBehaviour
 {
     [SerializeField] private GameObject pantallaInicio;
     [SerializeField] private GameObject pantallaAppMsg;
+    [SerializeField] private GameObject InterfazAppMsg;
+    [SerializeField] private GameObject appActual;
+    private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
     private GameObject pantallaActual;
+    public GameObject AppActual { get => appActual;}
+    public Stack<GameObject> HistorialPantallasApp { get => historialPantallasApp; set => historialPantallasApp = value; }
+    public static CelularInterface instancia;
+    private void Awake()
+    {
+        CelularManagent.celularInterface = this;
+    }
     public void RetrocederPantalla()
     {
-        if (CelularManagent.celularInstancia.HistorialPantallasApp.Count > 1)
+        if (HistorialPantallasApp.Count > 1)
         {
-            pantallaActual = CelularManagent.celularInstancia.HistorialPantallasApp.Pop();
+            pantallaActual = HistorialPantallasApp.Pop();
             pantallaActual.SetActive(false);
-            pantallaActual = CelularManagent.celularInstancia.HistorialPantallasApp.Peek();
+            pantallaActual = HistorialPantallasApp.Peek();
             pantallaActual.SetActive(true);
 
-            Debug.Log($"Retrocedió a: {pantallaActual.name}. Elementos restantes en historial: {CelularManagent.celularInstancia.HistorialPantallasApp.Count}");
+            Debug.Log($"Retrocedió a: {pantallaActual.name}. Elementos restantes en historial: {HistorialPantallasApp.Count}");
         }
         else
         {
@@ -24,11 +36,30 @@ public class CelularInterface : MonoBehaviour
     }
     public void VolverInicio()
     {
-        CelularManagent.celularInstancia.LimpiarHistorial();
-        CelularManagent.celularInstancia.CambiarApp(pantallaInicio);
+        LimpiarHistorial();
+        CambiarApp(pantallaInicio);
     }
     public void AbrirAppMsg()
     {
-        CelularManagent.celularInstancia.CambiarApp(pantallaAppMsg);
+        CambiarApp(pantallaAppMsg);
+        AppMsgInterface managerMsg = InterfazAppMsg.GetComponent<AppMsgInterface>();
+        managerMsg.AbrirInicio();
+    }
+    public void CambiarPantalla(GameObject pantallaActual)
+    {
+        HistorialPantallasApp.Push(pantallaActual);
+        Debug.Log($"Avanzó a: {pantallaActual.name}. Guardada en historial: {HistorialPantallasApp.Peek().name}");
+    }
+    public void CambiarApp(GameObject appAbierto)
+    {
+        // Esto es un puntero automatico ???
+        appActual.SetActive(false);
+        appActual = appAbierto;
+        appActual.SetActive(true);
+    }
+    public void LimpiarHistorial()
+    {
+        HistorialPantallasApp.Clear();
+        Debug.Log("Historial limpiado por completo.");
     }
 }

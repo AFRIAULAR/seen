@@ -859,6 +859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CelularInterface
   pantallaInicio: {fileID: 106418688}
   pantallaAppMsg: {fileID: 1337780566}
+  InterfazAppMsg: {fileID: 1322206391}
+  appActual: {fileID: 106418688}
 --- !u!114 &319143441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,7 +873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9fc5dec6482194faf56bc5564f1b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CelularManagent
-  appActual: {fileID: 106418688}
 --- !u!1 &327965748
 GameObject:
   m_ObjectHideFlags: 0
