@@ -7,8 +7,11 @@ public class CelularInterface : MonoBehaviour
     [SerializeField] private GameObject pantallaInicio;
     [SerializeField] private GameObject pantallaAppMsg;
     [SerializeField] private GameObject InterfazAppMsg;
-    [SerializeField] private GameObject appActual;
     [SerializeField] private GameObject pantallaDiary;
+
+
+    [SerializeField] private GameObject appActual;
+    
     private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
     private GameObject pantallaActual;
     public GameObject AppActual { get => appActual;}
