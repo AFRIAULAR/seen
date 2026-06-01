@@ -6,17 +6,13 @@ public class ReactiveUIManager : MonoBehaviour
     [SerializeField] private Image stressOverlay;
     [SerializeField] private Image blurOverlay;
 
-    private int stress = 0;
-
-    public void AddStress(int amount)
+    public void SetStress(int stress)
     {
-        stress += amount;
         stress = Mathf.Clamp(stress, 0, 100);
-
-        UpdateVisualStress();
+        UpdateVisualStress(stress);
     }
 
-    private void UpdateVisualStress()
+    private void UpdateVisualStress(int stress)
     {
         float alpha = stress / 100f * 0.8f;
 

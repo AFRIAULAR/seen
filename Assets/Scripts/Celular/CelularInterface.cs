@@ -8,6 +8,7 @@ public class CelularInterface : MonoBehaviour
     [SerializeField] private GameObject pantallaAppMsg;
     [SerializeField] private GameObject InterfazAppMsg;
     [SerializeField] private GameObject appActual;
+    [SerializeField] private GameObject pantallaDiary;
     private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
     private GameObject pantallaActual;
     public GameObject AppActual { get => appActual;}
@@ -61,5 +62,10 @@ public class CelularInterface : MonoBehaviour
     {
         HistorialPantallasApp.Clear();
         Debug.Log("Historial limpiado por completo.");
+    }
+
+    public void AbrirDiary()
+    {
+        CambiarApp(pantallaDiary);
     }
 }
