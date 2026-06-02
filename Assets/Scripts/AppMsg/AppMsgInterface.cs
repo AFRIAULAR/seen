@@ -11,7 +11,6 @@ public class AppMsgInterface : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nombreContacto;
 
     [Header("Referencias del Sistema Narrativo")]
-    [Tooltip("Arrastra aquí el objeto de tu escena que contiene el script 'ConversationManager'.")]
     [SerializeField] private ConversationManager conversationManager;
 
     private void OnEnable()

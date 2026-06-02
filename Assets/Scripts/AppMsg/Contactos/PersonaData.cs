@@ -31,10 +31,8 @@ public class PersonaData : ScriptableObject
     public int seguridad = 50;
 
     [Header("Control del Guion")]
-    [Tooltip("La bandera que indica en qué parte del chat se encuentra actualmente esta persona.")]
     public int idActual = 0; 
     
-    [Tooltip("Arrastra aquí el archivo .csv de este personaje.")]
     public TextAsset archivoGuionCSV;
 
     private Dictionary<int, LineaDialogo> diccionarioDialogos = new Dictionary<int, LineaDialogo>();
@@ -47,7 +45,7 @@ public class PersonaData : ScriptableObject
         ansiedad = 50;
         seguridad = 50;
         idActual = 0;
-        historialConversacion.Clear(); // Limpiamos el historial al resetear
+        historialConversacion.Clear();
     }
 
     /// <summary>

@@ -19,4 +19,4 @@ MonoBehaviour:
   seguridad: 50
   idActual: 0
   archivoGuionCSV: {fileID: 4900000, guid: 55110544495c9914fb509c20a60ca456, type: 3}
-  historialConversacion: 00000000
+  historialConversacion: 

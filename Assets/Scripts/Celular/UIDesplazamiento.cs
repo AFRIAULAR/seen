@@ -16,14 +16,12 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     [Header("Garantía de Colisión")]
     [Range(0.01f, 0.1f)]
-    [Tooltip("El grosor de la base cuando está cerrado. No usar 0 para que el mouse pueda volver a entrar.")]
     [SerializeField] private float escalaMinimaOculta = 0.03f; 
 
     private RectTransform miRectTransform;
     private CanvasGroup miCanvasGroup;
     private Coroutine corrutinaAnimacion;
 
-    // Respaldos exactos de tu configuración manual en el Inspector
     private Vector3 posicionOriginalTope;
     private Vector3 escalaOriginalTope;
     
@@ -35,20 +33,16 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
         miRectTransform = GetComponent<RectTransform>();
         miCanvasGroup = GetComponent<CanvasGroup>();
 
-        // 1. RESPALDAMOS TU CONFIGURACIÓN MANUAL INTACTA (Este es tu 100% abierto)
         posicionOriginalTope = miRectTransform.localPosition;
         escalaOriginalTope = miRectTransform.localScale;
 
-        // 2. CALCULAMOS LOS ESTADOS DE CIERRE SIN ALTERAR TU PIVOTE
         escalaOcultaMinima = CalcularEscalaOculta();
         posicionOcultaMinima = CalcularPosicionOculta();
 
-        // 3. CONFIGURACIÓN DE INICIO SEGURA
         miCanvasGroup.alpha = 0f;
         miCanvasGroup.blocksRaycasts = true; 
         miCanvasGroup.interactable = false; 
         
-        // Inicializamos en el estado oculto calibrado
         miRectTransform.localScale = escalaOcultaMinima;
         miRectTransform.localPosition = posicionOcultaMinima;
     }
@@ -85,7 +79,6 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         Vector3 offset = Vector3.zero;
 
-        // Compensamos el movimiento del eje según el pivote que tú ya pusiste
         switch (direccion)
         {
             case DireccionDespliegue.Arriba:
@@ -138,11 +131,9 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         while (Vector3.Distance(miRectTransform.localScale, escalaDestino) > 0.001f || Vector3.Distance(miRectTransform.localPosition, posicionDestino) > 0.01f)
         {
-            // Transición gemela: Escala y posición se mueven en perfecta sincronía
             miRectTransform.localScale = Vector3.Lerp(miRectTransform.localScale, escalaDestino, Time.deltaTime * velocidadCambio);
             miRectTransform.localPosition = Vector3.Lerp(miRectTransform.localPosition, posicionDestino, Time.deltaTime * velocidadCambio);
             
-            // Cálculo del progreso para el desvanecimiento
             float distanceActual = Vector3.Distance(miRectTransform.localScale, escalaDestino);
             float progreso = distanciaInicial > 0f ? (1f - (distanceActual / distanciaInicial)) : 1f;
             

@@ -5,7 +5,6 @@ public class AppMsgManagent : MonoBehaviour
     public static AppMsgManagent appMsgManagent;
 
     [Header("Base de Datos de Personajes")]
-    [Tooltip("Agregá acá todos los ScriptableObjects de tus personas desde el Inspector.")]
     [SerializeField] private PersonaData[] listaPersonas;
 
     [Header("Configuración de Interfaz automática")]
