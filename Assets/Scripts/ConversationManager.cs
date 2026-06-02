@@ -38,12 +38,34 @@ public class ConversationManager : MonoBehaviour
 
     private void CrearMensaje(string texto, bool esJugador)
     {
-        GameObject prefab = esJugador ? msgPrefabPlayer : msgPrefab;
+        if (esJugador)
+        {
+            CrearEspacioVacio();
 
-        GameObject nuevoMsg = Instantiate(prefab, content);
+            GameObject nuevoMsg = Instantiate(msgPrefabPlayer, content);
+            ConfigurarTexto(nuevoMsg, texto);
+        }
+        else
+        {
+            GameObject nuevoMsg = Instantiate(msgPrefab, content);
+            ConfigurarTexto(nuevoMsg, texto);
 
-        TMP_Text textoMsg = nuevoMsg.GetComponentInChildren<TMP_Text>();
+            CrearEspacioVacio();
+        }
+    }
 
-        textoMsg.text = texto;
+    private void ConfigurarTexto(GameObject go, string texto)
+    {
+        TMP_Text textoMsg = go.GetComponentInChildren<TMP_Text>();
+        if (textoMsg != null)
+        {
+            textoMsg.text = texto;
+        }
+    }
+
+    private void CrearEspacioVacio()
+    {
+        GameObject fantasma = new GameObject("EspacioVacioFantasma", typeof(RectTransform));
+        fantasma.transform.SetParent(content, false);
     }
 }
