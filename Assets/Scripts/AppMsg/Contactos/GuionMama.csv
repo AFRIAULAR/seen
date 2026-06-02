@@ -1,0 +1,12 @@
+ID;Hablante;Texto;ID_Siguiente;Opcion_1;Destino_1;Mod_1;Opcion_2;Destino_2;Mod_2;Opcion_3;Destino_3;Mod_3;Opcion_4;Destino_4;Mod_4
+0;NPC;Hola, ¿tenés un minuto? Necesito ayuda con algo urgente.;-1;Sí, claro, decime.;1;10,0,-5;Estoy medio ocupado, pero decime.;2;5,5,2000;Ahora mismo no puedo.;3;-10,15,0;;;
+1;JUGADOR;Sí, claro, decime. ¿Qué pasó?;4;;;;;;;;;;;;
+2;JUGADOR;Estoy medio ocupado, pero decime rápido.;4;;;;;;;;;;;;
+3;JUGADOR;Ahora mismo no puedo, hablamos después.;-1;;;;;;;;;;;;
+4;NPC;Se rompió el caño de la cocina y se está inundando todo.;-1;¡Voy corriendo a ayudarte!;5;20,-10,10;Llamá a un plomero, yo no sé de eso.;6;-15,10,-5;Buscá la llave de paso y cerrala.;7;5,5,15;No es mi problema, arreglate.;8;-30,20,-20
+5;JUGADOR;¡Voy corriendo a ayudarte!;9;;;;;;;;;;;;
+6;JUGADOR;Llamá a un plomero, yo no sé de eso.;-1;;;;;;;;;;;;
+7;JUGADOR;Buscá la llave de paso y cerrala.;10;;;;;;;;;;;;
+8;JUGADOR;No es mi problema, arreglatela.;-1;;;;;;;;;;;;
+9;NPC;Gracias hijo, aquí te espero.;-1;;;;;;;;;;;;
+10;NPC;LLave de paso?;-1;;;;;;;;;;;;
