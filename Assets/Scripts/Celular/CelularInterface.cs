@@ -14,29 +14,13 @@ public class CelularInterface : MonoBehaviour
     
     private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
     private GameObject pantallaActual;
-    public GameObject AppActual { get => appActual; }
+    public GameObject AppActual { get => appActual;}
     public Stack<GameObject> HistorialPantallasApp { get => historialPantallasApp; set => historialPantallasApp = value; }
     public static CelularInterface instancia;
-
     private void Awake()
     {
         CelularManagent.celularInterface = this;
     }
-
-    // ── BOTÓN "INICIO" de la InterfazInferior ────────────────────────────────
-    public void BotonInicio()
-    {
-        VolverInicio();
-    }
-
-    // ── BOTÓN "ATRÁS" de la InterfazInferior ─────────────────────────────────
-    public void BotonAtras()
-    {
-        RetrocederPantalla();
-    }
-
-    // ─────────────────────────────────────────────────────────────────────────
-
     public void RetrocederPantalla()
     {
         if (HistorialPantallasApp.Count > 1)
@@ -54,36 +38,29 @@ public class CelularInterface : MonoBehaviour
             VolverInicio();
         }
     }
-
     public void VolverInicio()
     {
         LimpiarHistorial();
         CambiarApp(pantallaInicio);
     }
-
     public void AbrirAppMsg()
     {
         CambiarApp(pantallaAppMsg);
-        HistorialPantallasApp.Push(pantallaAppMsg);
         AppMsgInterface managerMsg = InterfazAppMsg.GetComponent<AppMsgInterface>();
         managerMsg.AbrirInicio();
     }
-
-    public void CambiarPantalla(GameObject nuevaPantalla)
+    public void CambiarPantalla(GameObject pantallaActual)
     {
-        HistorialPantallasApp.Push(nuevaPantalla);
-        Debug.Log($"Avanzó a: {nuevaPantalla.name}. Guardada en historial: {HistorialPantallasApp.Peek().name}");
+        HistorialPantallasApp.Push(pantallaActual);
+        Debug.Log($"Avanzó a: {pantallaActual.name}. Guardada en historial: {HistorialPantallasApp.Peek().name}");
     }
-
     public void CambiarApp(GameObject appAbierto)
     {
-        if (appActual != null && appActual != appAbierto)
-            appActual.SetActive(false);
-
+        // Esto es un puntero automatico ???
+        appActual.SetActive(false);
         appActual = appAbierto;
         appActual.SetActive(true);
     }
-
     public void LimpiarHistorial()
     {
         HistorialPantallasApp.Clear();
@@ -92,16 +69,10 @@ public class CelularInterface : MonoBehaviour
 
     public void AbrirDiary()
     {
-        LimpiarHistorial();
         CambiarApp(pantallaDiary);
-        HistorialPantallasApp.Push(pantallaDiary);
     }
-
     public void AbrirMusic()
     {
-        LimpiarHistorial();
         CambiarApp(pantallaMusic);
-        HistorialPantallasApp.Push(pantallaMusic);
     }
 }
-
