@@ -1,6 +1,30 @@
 ID;Hablante;Texto;ID_Siguiente;Opcion_1;Destino_1;Mod_1;Opcion_2;Destino_2;Mod_2;Opcion_3;Destino_3;Mod_3;Opcion_4;Destino_4;Mod_4
-0;NPC;Hola, ¿tenés un minuto? Necesito ayuda con algo urgente.;-1;Sí, claro, decime.;1;10,0,-5;Estoy medio ocupado, pero decime.;2;5,5,2000;Ahora mismo no puedo.;3;-10,15,0;[Vacío];-1;[Vacío]
-1;JUGADOR;Yo: Sí, claro, decime. ¿Qué pasó?;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-2;JUGADOR;Yo: Estoy medio ocupado, pero decime rápido.;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-3;JUGADOR;Yo: Ahora mismo no puedo, hablamos después.;-1;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-4;NPC;Se rompió el caño de la cocina y se está inundando todo.;-1;¡Voy corriendo a ayudarte!;5;20,-10,10;Llamá a un plomero, yo no sé de eso.;6;-15,10,-5;Buscá la llave de paso y cerrala.;7;5,5,15;No es mi problema, arreglate.;8;-30,20,-20
+0;NPC;¿Tenés un minuto? Quería preguntarte cómo venís con tus cosas.;-1;Sí, contame.;1;10,10,-10;Puedo hablar un rato.;2;0,-5,10;Ahora no estoy para esta charla.;3;-10,-15,15;;;
+1;JUGADOR;Sí, contame.;4;;;;;;;;;;;;
+2;JUGADOR;Puedo hablar un rato.;5;;;;;;;;;;;;
+3;JUGADOR;Ahora no estoy para esta charla.;6;;;;;;;;;;;;
+4;NPC;Me preocupa verte tan dispersa. Siento que podrías estar haciendo más.;7;;;;;;;;;;;;
+5;NPC;Voy al punto. Me preocupa que no estés aprovechando tu potencial.;7;;;;;;;;;;;;
+6;NPC;Justamente por eso me preocupa. Siempre estás ocupada, pero no sé hacia dónde.;7;;;;;;;;;;;;
+7;NPC;A tu edad yo ya tenía mucho más claro lo que quería.;-1;Tenés razón, debería organizarme mejor.;8;15,15,-15;Estoy construyendo mi camino, aunque no sea igual al tuyo.;9;5,-5,20;No todo tiene que medirse con tu vida.;10;-10,-20,15;;;
+8;JUGADOR;Tenés razón, debería organizarme mejor.;11;;;;;;;;;;;;
+9;JUGADOR;Estoy construyendo mi camino, aunque no sea igual al tuyo.;12;;;;;;;;;;;;
+10;JUGADOR;No todo tiene que medirse con tu vida.;13;;;;;;;;;;;;
+11;NPC;Me alegra que lo reconozcas. Solo quiero verte mejor.;14;;;;;;;;;;;;
+12;NPC;Eso suena bien, pero a veces me cuesta entender tus decisiones.;14;;;;;;;;;;;;
+13;NPC;No te estoy atacando. Estoy tratando de ayudarte.;14;;;;;;;;;;;;
+14;NPC;A veces siento que tomás mis consejos como críticas.;-1;Perdón, sé que querés ayudar.;15;10,10,-10;A veces me cuesta recibirlos porque me siento juzgada.;16;0,-5,20;Porque muchas veces suenan como críticas.;17;-5,-20,15;;;
+15;JUGADOR;Perdón, sé que querés ayudar.;18;;;;;;;;;;;;
+16;JUGADOR;A veces me cuesta recibirlos porque me siento juzgada.;19;;;;;;;;;;;;
+17;JUGADOR;Porque muchas veces suenan como críticas.;20;;;;;;;;;;;;
+18;NPC;Está bien. No quiero que sientas presión, solo preocupación.;21;;;;;;;;;;;;
+19;NPC;No sabía que te hacía sentir así. Voy a intentar decirlo mejor.;21;;;;;;;;;;;;
+20;NPC;Bueno, quizás tengas razón. A veces soy demasiado directo.;21;;;;;;;;;;;;
+21;NPC;Solo quiero estar tranquilo de que estás haciendo algo por tu futuro.;-1;Voy a esforzarme más.;22;15,10,-15;Estoy haciendo algo, aunque todavía no se vea del todo.;23;5,-5,20;Mi futuro no tiene que tranquilizarte a vos.;24;-10,-20,15;;;
+22;JUGADOR;Voy a esforzarme más.;25;;;;;;;;;;;;
+23;JUGADOR;Estoy haciendo algo, aunque todavía no se vea del todo.;26;;;;;;;;;;;;
+24;JUGADOR;Mi futuro no tiene que tranquilizarte a vos.;27;;;;;;;;;;;;
+25;NPC;Eso quería escuchar. Confío en que podés.;28;;;;;;;;;;;;
+26;NPC;Está bien. Supongo que tengo que aprender a confiar más.;28;;;;;;;;;;;;
+27;NPC;Duele escucharlo, pero entiendo que necesitás decidir por vos.;28;;;;;;;;;;;;
+28;NPC;No siempre sé cómo acompañarte sin exigirte.;-1;;;;;;;;;;;;

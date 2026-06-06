@@ -5,21 +5,22 @@ using System;
 
 public class PanelChatScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [Header("Configuración del Chat (Se carga por código)")]
+    [Header("Configuración del Chat")]
+    [SerializeField] private PersonaData personaData;
+
     public string nombreChat;
 
     [Header("Componentes de UI del Panel")]
     [SerializeField] private TMP_Text nombreText;
     [SerializeField] private TMP_Text ultimoMensajeText;
 
-    public static event Action<string> OnPanelActivo;
+    public static event Action<PersonaData> OnPanelActivo;
 
-    /// <summary>
-    /// Método para inicializar el panel dinámicamente desde el AppMsgManagent
-    /// </summary>
     public void InicializarPanel(PersonaData persona)
     {
         if (persona == null) return;
+
+        personaData = persona;
 
         nombreChat = persona.nombre;
         if (nombreText != null) nombreText.text = nombreChat;
@@ -41,18 +42,18 @@ public class PanelChatScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log($"[HOVER] El mouse ENTRÓ al panel: {gameObject.name}");
-    }
+    public void OnPointerEnter(PointerEventData eventData) { }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log($"[HOVER] El mouse SALIÓ del panel: {gameObject.name}");
-    }
+    public void OnPointerExit(PointerEventData eventData) { }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnPanelActivo?.Invoke(nombreChat);
+        if (personaData == null)
+        {
+            Debug.LogError($"[PanelChatScript] No hay PersonaData asignada en {gameObject.name}");
+            return;
+        }
+
+        OnPanelActivo?.Invoke(personaData);
     }
 }

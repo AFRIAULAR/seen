@@ -1,6 +1,30 @@
 ID;Hablante;Texto;ID_Siguiente;Opcion_1;Destino_1;Mod_1;Opcion_2;Destino_2;Mod_2;Opcion_3;Destino_3;Mod_3;Opcion_4;Destino_4;Mod_4
-0;NPC;Hola, ¿tenés un minuto? Necesito ayuda con algo urgente.;-1;Sí, claro, decime.;1;10,0,-5;Estoy medio ocupado, pero decime.;2;5,5,2000;Ahora mismo no puedo.;3;-10,15,0;[Vacío];-1;[Vacío]
-1;JUGADOR;Yo: Sí, claro, decime. ¿Qué pasó?;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-2;JUGADOR;Yo: Estoy medio ocupado, pero decime rápido.;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-3;JUGADOR;Yo: Ahora mismo no puedo, hablamos después.;-1;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-4;NPC;Se rompió el caño de la cocina y se está inundando todo.;-1;¡Voy corriendo a ayudarte!;5;20,-10,10;Llamá a un plomero, yo no sé de eso.;6;-15,10,-5;Buscá la llave de paso y cerrala.;7;5,5,15;No es mi problema, arreglate.;8;-30,20,-20
+0;NPC;Hola, perdón la hora. Necesito pedirte algo urgente.;-1;Sí, decime qué necesitás.;1;20,15,-10;Puedo verlo un momento.;2;10,-5,10;Mi horario ya terminó.;3;-10,-20,20;;;
+1;JUGADOR;Sí, decime qué necesitás.;4;;;;;;;;;;;;
+2;JUGADOR;Puedo verlo un momento.;5;;;;;;;;;;;;
+3;JUGADOR;Mi horario ya terminó.;6;;;;;;;;;;;;
+4;NPC;Gracias. Sabía que podía contar con vos. Necesito que revises unos archivos para mañana.;7;;;;;;;;;;;;
+5;NPC;Es rápido, pero necesito que quede listo antes de mañana.;7;;;;;;;;;;;;
+6;NPC;Entiendo, pero esto no puede esperar demasiado.;7;;;;;;;;;;;;
+7;NPC;Sé que es fuera de horario, pero el equipo depende de esto.;-1;No hay problema, lo hago.;8;25,15,-15;Puedo revisar una parte, pero no todo hoy.;9;10,-5,15;No voy a trabajar fuera de horario.;10;-15,-25,20;;;
+8;JUGADOR;No hay problema, lo hago.;11;;;;;;;;;;;;
+9;JUGADOR;Puedo revisar una parte, pero no todo hoy.;12;;;;;;;;;;;;
+10;JUGADOR;No voy a trabajar fuera de horario.;13;;;;;;;;;;;;
+11;NPC;Excelente. Te lo agradezco mucho, nos salvás.;14;;;;;;;;;;;;
+12;NPC;Bueno, algo es mejor que nada. Mandame lo que puedas.;14;;;;;;;;;;;;
+13;NPC;Me sorprende un poco tu respuesta, la verdad.;14;;;;;;;;;;;;
+14;NPC;Necesito saber si puedo contar con vos en momentos críticos.;-1;Sí, podés contar conmigo.;15;20,15,-15;Podés contar conmigo dentro de acuerdos claros.;16;5,-5,20;No confundas compromiso con disponibilidad total.;17;-10,-25,15;;;
+15;JUGADOR;Sí, podés contar conmigo.;18;;;;;;;;;;;;
+16;JUGADOR;Podés contar conmigo dentro de acuerdos claros.;19;;;;;;;;;;;;
+17;JUGADOR;No confundas compromiso con disponibilidad total.;20;;;;;;;;;;;;
+18;NPC;Eso habla muy bien de tu actitud.;21;;;;;;;;;;;;
+19;NPC;Entiendo. Podemos ordenar mejor los tiempos para la próxima.;21;;;;;;;;;;;;
+20;NPC;Está bien. Quizás me excedí con el pedido.;21;;;;;;;;;;;;
+21;NPC;De todas formas, mañana necesito una respuesta concreta.;-1;Voy a resolverlo hoy.;22;25,10,-15;Mañana a primera hora te doy una respuesta.;23;5,-5,15;Mañana lo vemos en horario laboral.;24;-10,-20,20;;;
+22;JUGADOR;Voy a resolverlo hoy.;25;;;;;;;;;;;;
+23;JUGADOR;Mañana a primera hora te doy una respuesta.;26;;;;;;;;;;;;
+24;JUGADOR;Mañana lo vemos en horario laboral.;27;;;;;;;;;;;;
+25;NPC;Perfecto. Gracias por la predisposición.;28;;;;;;;;;;;;
+26;NPC;Está bien. Espero tu respuesta temprano.;28;;;;;;;;;;;;
+27;NPC;Bien. Lo hablamos mañana entonces.;28;;;;;;;;;;;;
+28;NPC;Buenas noches.;-1;;;;;;;;;;;;

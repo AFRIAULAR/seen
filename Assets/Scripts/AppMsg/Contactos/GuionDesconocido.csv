@@ -1,6 +1,30 @@
 ID;Hablante;Texto;ID_Siguiente;Opcion_1;Destino_1;Mod_1;Opcion_2;Destino_2;Mod_2;Opcion_3;Destino_3;Mod_3;Opcion_4;Destino_4;Mod_4
-0;NPC;Hola, ¿tenés un minuto? Necesito ayuda con algo urgente.;-1;Sí, claro, decime.;1;10,0,-5;Estoy medio ocupado, pero decime.;2;5,5,2000;Ahora mismo no puedo.;3;-10,15,0;[Vacío];-1;[Vacío]
-1;JUGADOR;Yo: Sí, claro, decime. ¿Qué pasó?;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-2;JUGADOR;Yo: Estoy medio ocupado, pero decime rápido.;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-3;JUGADOR;Yo: Ahora mismo no puedo, hablamos después.;-1;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-4;NPC;Se rompió el caño de la cocina y se está inundando todo.;-1;¡Voy corriendo a ayudarte!;5;20,-10,10;Llamá a un plomero, yo no sé de eso.;6;-15,10,-5;Buscá la llave de paso y cerrala.;7;5,5,15;No es mi problema, arreglate.;8;-30,20,-20
+0;NPC;¿Estás? Te escribí hace rato.;-1;Perdón, no vi el mensaje.;1;15,15,-10;Sí, estaba necesitando un rato para mí.;2;5,-5,15;No tengo que responder al instante.;3;-10,-20,15;;;
+1;JUGADOR;Perdón, no vi el mensaje.;4;;;;;;;;;;;;
+2;JUGADOR;Sí, estaba necesitando un rato para mí.;5;;;;;;;;;;;;
+3;JUGADOR;No tengo que responder al instante.;6;;;;;;;;;;;;
+4;NPC;Me asusté. Pensé que estabas rara conmigo.;7;;;;;;;;;;;;
+5;NPC;Entiendo, pero me hubiera gustado que me avisaras.;7;;;;;;;;;;;;
+6;NPC;Bueno, no hacía falta responder así.;7;;;;;;;;;;;;
+7;NPC;Últimamente siento que cada vez me dejás más afuera.;-1;No quiero que sientas eso.;8;20,15,-15;No te estoy dejando afuera, estoy intentando tener espacio.;9;5,-5,20;No todo lo que hago tiene que ver con vos.;10;-10,-20,15;;;
+8;JUGADOR;No quiero que sientas eso.;11;;;;;;;;;;;;
+9;JUGADOR;No te estoy dejando afuera, estoy intentando tener espacio.;12;;;;;;;;;;;;
+10;JUGADOR;No todo lo que hago tiene que ver con vos.;13;;;;;;;;;;;;
+11;NPC;Entonces hablame más. A veces siento que tengo que adivinarte.;14;;;;;;;;;;;;
+12;NPC;Puedo entenderlo, pero me cuesta no tomarlo personal.;14;;;;;;;;;;;;
+13;NPC;Eso sonó bastante frío.;14;;;;;;;;;;;;
+14;NPC;Yo también necesito sentirme elegida.;-1;Te elijo, perdón si no lo demuestro.;15;20,15,-15;Te quiero, pero elegirte no significa perderme.;16;5,-5,20;No puedo estar reafirmándote todo el tiempo.;17;-10,-25,15;;;
+15;JUGADOR;Te elijo, perdón si no lo demuestro.;18;;;;;;;;;;;;
+16;JUGADOR;Te quiero, pero elegirte no significa perderme.;19;;;;;;;;;;;;
+17;JUGADOR;No puedo estar reafirmándote todo el tiempo.;20;;;;;;;;;;;;
+18;NPC;Gracias. Necesitaba escucharlo.;21;;;;;;;;;;;;
+19;NPC;Eso me cuesta, pero quiero entenderlo.;21;;;;;;;;;;;;
+20;NPC;Está bien. Quizás hoy no estamos pudiendo hablar bien.;21;;;;;;;;;;;;
+21;NPC;No quiero pelear. Solo extraño sentirnos cerca.;-1;Yo también extraño eso.;22;15,10,-10;Podemos acercarnos sin invadirnos.;23;0,-5,20;Si estar cerca es esto, me agota.;24;-10,-20,10;;;
+22;JUGADOR;Yo también extraño eso.;25;;;;;;;;;;;;
+23;JUGADOR;Podemos acercarnos sin invadirnos.;26;;;;;;;;;;;;
+24;JUGADOR;Si estar cerca es esto, me agota.;27;;;;;;;;;;;;
+25;NPC;Entonces intentemos hablar mejor, sin lastimarnos.;28;;;;;;;;;;;;
+26;NPC;Sí. Creo que eso sería bueno para las dos.;28;;;;;;;;;;;;
+27;NPC;Me duele, pero prefiero que lo digas antes que fingir.;28;;;;;;;;;;;;
+28;NPC;Hablemos mañana con más calma.;-1;;;;;;;;;;;;

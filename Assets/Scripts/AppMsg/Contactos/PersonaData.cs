@@ -116,4 +116,10 @@ public class PersonaData : ScriptableObject
     {
         return diccionarioDialogos.TryGetValue(idBuscar, out lineaEncontrada);
     }
+
+    public void ReiniciarConversacion()
+    {
+        idActual = 0;
+        historialConversacion.Clear();
+    }//reiniciar conversacion, chequear si lo sacamos luego
 }

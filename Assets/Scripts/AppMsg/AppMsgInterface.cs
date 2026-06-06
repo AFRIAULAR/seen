@@ -43,29 +43,26 @@ public class AppMsgInterface : MonoBehaviour
         pantallaListaChat.SetActive(true);
     }
 
-    public void AbrirChat(string nombre)
+    public void AbrirChat(PersonaData persona)
     {
-        Debug.Log($"[CLICK DETECTADO] Cargando conversación de: {nombre}");
+        if (persona == null)
+        {
+            Debug.LogError("[AppMsgInterface] PersonaData llegó null.");
+            return;
+        }
+
+        Debug.Log($"[CLICK DETECTADO] Cargando conversación de: {persona.nombre}");
+
         CelularManagent.celularInterface.CambiarPantalla(pantallaChat);
-        
-        CargarChat(nombre);
+
+        nombreContacto.text = persona.nombre;
 
         pantallaListaChat.SetActive(false);
         pantallaChat.SetActive(true);
-    }
 
-    public void CargarChat(string nombre)
-    {
-        nombreContacto.text = nombre;
-
-        if (AppMsgManagent.appMsgManagent != null)
+        if (conversationManager != null)
         {
-            PersonaData personaSeleccionada = AppMsgManagent.appMsgManagent.BuscarPersonaPorNombre(nombre);
-
-            if (personaSeleccionada != null && conversationManager != null)
-            {
-                conversationManager.AbrirChatConPersonaje(personaSeleccionada);
-            }
+            conversationManager.AbrirChatConPersonaje(persona);
         }
     }
 }

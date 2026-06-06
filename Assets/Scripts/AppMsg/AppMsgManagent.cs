@@ -24,9 +24,17 @@ public class AppMsgManagent : MonoBehaviour
     }
 
     private void Start()
+{
+    foreach (PersonaData persona in listaPersonas)
     {
-        GenerarPanelesDeChat();
+        if (persona != null)
+        {
+            persona.ReiniciarConversacion();
+        }
     }
+
+    GenerarPanelesDeChat();
+} //reinicia el chat para testear
 
     /// <summary>
     /// Genera dinámicamente un panel en el Vertical Layout Group por cada persona en la lista.
