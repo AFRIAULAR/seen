@@ -9,6 +9,7 @@ public class CelularInterface : MonoBehaviour
     [SerializeField] private GameObject InterfazAppMsg;
     [SerializeField] private GameObject pantallaDiary;
     [SerializeField] private GameObject pantallaMusic;
+    [SerializeField] private GameObject pantallaCasino;
 
     [SerializeField] private GameObject appActual;
     
@@ -74,5 +75,9 @@ public class CelularInterface : MonoBehaviour
     public void AbrirMusic()
     {
         CambiarApp(pantallaMusic);
+    }
+    public void AbrirCasino()
+    {
+        CambiarApp(pantallaCasino);
     }
 }
