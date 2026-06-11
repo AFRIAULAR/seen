@@ -1,7 +1,9 @@
 ID;Hablante;Texto;ID_Siguiente;Opcion_1;Destino_1;Mod_1;Opcion_2;Destino_2;Mod_2;Opcion_3;Destino_3;Mod_3;Opcion_4;Destino_4;Mod_4
-0;NPC;Hola! Soy Mario. ¿Querés probar suerte en el Casino?;-1;Claro, contame mas.;1;0,0,0;No gracias.;5;0,0,0;;-1;;;-1;
-1;NPC;Es una app de ruleta. Podés ganar o perder dinero.;2;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-2;NPC;Si querés cargar dinero para empezar, necesitás un código.;3;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-3;NPC;El código secreto es: MARIO2025. Guardalo bien.;4;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-4;NPC;Ingresalo en la app del Casino para recibir $100 de inicio. ¡Buena suerte!;-1;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
-5;NPC;Como quieras. Cuando cambies de opinión, sabés dónde encontrarme.;-1;[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío];[Vacío];-1;[Vacío]
+0;NPC;Hola! Soy Mario. ¿Querés probar suerte en el Casino?;-1;Claro, contame mas.;1;0,0,0;No gracias.;6;0,0,0;;;;;;
+1;JUGADOR;Claro, contame mas.;2;;;;;;;;;;;;
+2;NPC;Es una app de ruleta. Podés ganar o perder dinero.;3;;;;;;;;;;;;
+3;NPC;Si querés cargar dinero para empezar, necesitás un código.;4;;;;;;;;;;;;
+4;NPC;El código secreto es: MARIO2025. Guardalo bien.;5;;;;;;;;;;;;
+5;NPC;Ingresalo en la app del Casino para recibir $100 de inicio. ¡Buena suerte!;-1;;;;;;;;;;;;
+6;JUGADOR;No gracias.;7;;;;;;;;;;;;
+7;NPC;Como quieras. Cuando cambies de opinión, sabés dónde encontrarme.;-1;;;;;;;;;;;;

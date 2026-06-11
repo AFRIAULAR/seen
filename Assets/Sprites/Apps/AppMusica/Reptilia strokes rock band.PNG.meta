@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0d299bb68f53ab4daf9955803101021
+guid: d3b870e8f9c6fbe47bc76f13520d06ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1638705625034182175
-    second: terraria_0
+      213: 2656460643948591073
+    second: Reptilia strokes rock band_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: terraria_0
+      name: Reptilia strokes rock band_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2560
-        height: 1440
+        width: 791
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1ec89f651addb610800000000000000
-      internalID: 1638705625034182175
+      spriteID: 1e77c5291e4add420800000000000000
+      internalID: 2656460643948591073
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      terraria_0: 1638705625034182175
+      Reptilia strokes rock band_0: 2656460643948591073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

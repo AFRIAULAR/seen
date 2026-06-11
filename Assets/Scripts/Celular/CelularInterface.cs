@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class CelularInterface : MonoBehaviour
@@ -10,7 +9,7 @@ public class CelularInterface : MonoBehaviour
     [SerializeField] private GameObject pantallaDiary;
     [SerializeField] private GameObject pantallaMusic;
     [SerializeField] private GameObject pantallaCasino;
-
+    [SerializeField] private GameObject pantallaBanco;
     [SerializeField] private GameObject appActual;
     
     private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
@@ -79,5 +78,9 @@ public class CelularInterface : MonoBehaviour
     public void AbrirCasino()
     {
         CambiarApp(pantallaCasino);
+    }
+    public void AbrirBanco()
+    {
+        CambiarApp(pantallaBanco);
     }
 }

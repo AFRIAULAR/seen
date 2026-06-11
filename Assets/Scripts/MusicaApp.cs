@@ -94,8 +94,8 @@ public class MusicaApp : MonoBehaviour
     {
         BloquearApp();
 
-        if (popUpEstres != null)     popUpEstres.SetActive(false);
-        if (pantallaMusica != null)  pantallaMusica.SetActive(false);
+        if (popUpEstres != null) popUpEstres.SetActive(false);
+        if (pantallaMusica != null) pantallaMusica.SetActive(false);
 
         // Slider: sólo lectura (el jugador no puede arrastrarlo)
         if (sliderProgreso != null)
@@ -159,14 +159,14 @@ public class MusicaApp : MonoBehaviour
     private void BloquearApp()
     {
         appDesbloqueada = false;
-        if (iconoMusica     != null) iconoMusica.color              = colorBloqueado;
+        if (iconoMusica != null) iconoMusica.color = colorBloqueado;
         if (botonIconoMusica != null) botonIconoMusica.interactable = false;
     }
 
     private void DesbloquearApp()
     {
         appDesbloqueada = true;
-        if (iconoMusica      != null) iconoMusica.color             = colorDesbloqueado;
+        if (iconoMusica != null) iconoMusica.color = colorDesbloqueado;
         if (botonIconoMusica != null) botonIconoMusica.interactable = true;
         Debug.Log("[MusicaApp] App de música desbloqueada.");
     }
@@ -198,7 +198,7 @@ public class MusicaApp : MonoBehaviour
 
         // Resetear slider
         if (sliderProgreso != null) sliderProgreso.value = 0f;
-        if (textoTiempo    != null) textoTiempo.text     = FormatearTiempo(0f) + " / " + FormatearTiempo(ObtenerDuracion());
+        if (textoTiempo != null) textoTiempo.text = FormatearTiempo(0f) + " / " + FormatearTiempo(ObtenerDuracion());
     }
 
     private void SiguienteCancion()
@@ -283,7 +283,7 @@ public class MusicaApp : MonoBehaviour
         if (emotionalStateManager != null)
         {
             int estresActual = emotionalStateManager.stress;
-            int reduccion    = -(estresActual / 2);
+            int reduccion = -(estresActual / 2);
             emotionalStateManager.ModifyState(reduccion, 0, 0);
             Debug.Log($"[MusicaApp] Estrés reducido. De {estresActual} a {emotionalStateManager.stress}. La música sigue sonando.");
         }

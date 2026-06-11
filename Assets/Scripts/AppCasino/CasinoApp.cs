@@ -23,6 +23,8 @@ public class CasinoApp : MonoBehaviour
     [SerializeField] private Button botonNegro;
     [SerializeField] private Button botonVerde;
     [SerializeField] private Button botonGirar;
+    [SerializeField] private Button botonIngresarDinero;
+    [SerializeField] private Button botonRetirarDinero;
     private string colorSeleccionado = "";
 
     // ── CODIGO SECRETO ────────────────────────────────────────────
@@ -50,6 +52,8 @@ public class CasinoApp : MonoBehaviour
         if (botonNegro != null)  botonNegro.onClick.AddListener(() => SeleccionarColor("Negro"));
         if (botonVerde != null)  botonVerde.onClick.AddListener(() => SeleccionarColor("Verde"));
         if (botonGirar != null)  botonGirar.onClick.AddListener(GirarRuleta);
+        if (botonIngresarDinero != null)  botonIngresarDinero.onClick.AddListener(() => CargarDinero(100));
+        if (botonRetirarDinero != null)  botonRetirarDinero.onClick.AddListener(() => RetirarDinero(100));
         if (botonAbrirPanelCodigo != null) botonAbrirPanelCodigo.onClick.AddListener(AbrirPanelCodigo);
         if (botonConfirmarCodigo != null)  botonConfirmarCodigo.onClick.AddListener(ConfirmarCodigo);
     }
@@ -155,10 +159,20 @@ public class CasinoApp : MonoBehaviour
     /// Punto de integracion para la billetera virtual.
     /// Llamar desde la app externa con la cantidad a depositar.
     /// </summary>
-    public void RecibirDineroBilletera(int cantidad)
+    public void CargarDinero(int cantidad = 100)
     {
         if (!dineroDesbloqueado) return;
+        if (!AppBancoManagent.bancoDatosInstancia.EnviarDineroCVU(cantidad)) // temporal
+            return; // falta popup o algun mensaje: No se cargo saldo
         dineroJugador += cantidad;
+        ActualizarUI();
+    }
+    public void RetirarDinero(int cantidad = 100)
+    {
+        if (!dineroDesbloqueado) return;
+        if ((dineroJugador - cantidad) < 0) return; // falta popup o algun mensaje: Dinero insuficiente para retirar
+        AppBancoManagent.bancoDatosInstancia.IngresarDinero(cantidad);
+        dineroJugador -= cantidad;
         ActualizarUI();
     }
 }

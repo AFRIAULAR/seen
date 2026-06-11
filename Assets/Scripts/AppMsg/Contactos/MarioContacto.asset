@@ -17,6 +17,6 @@ MonoBehaviour:
   empatia: 50
   ansiedad: 50
   seguridad: 50
-  idActual: 4
+  idActual: 0
   archivoGuionCSV: {fileID: 4900000, guid: 8669bcfe7192d0d4d9969fff48dfab9d, type: 3}
-  historialConversacion: 0000000001000000020000000300000004000000
+  historialConversacion: 
