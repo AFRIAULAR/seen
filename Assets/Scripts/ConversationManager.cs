@@ -9,6 +9,7 @@ public class ConversationManager : MonoBehaviour
     private PersonaData personaActual;
 
     [Header("Componentes de UI del Chat")]
+    [SerializeField] private ScrollRect scrollRectChat;
     [SerializeField] private GameObject msgPrefabNPC;
     [SerializeField] private GameObject msgPrefabPlayer;
     [SerializeField] private EmotionalStateManager emotionalState;
@@ -40,6 +41,8 @@ public class ConversationManager : MonoBehaviour
         }
 
         ApagarTodosLosBotones();
+
+        ForzarScrollAlFondo();
 
         if (personaActual.idActual != -1)
         {
@@ -98,8 +101,8 @@ public class ConversationManager : MonoBehaviour
             {
                 bool proximoEsJugador = (proximaLinea.hablante.ToUpper() == "JUGADOR" || proximaLinea.hablante.ToUpper() == "YO");
                 
-                if (proximoEsJugador) CargarLinea(linea.idSiguiente); // Jugador instantáneo
-                else StartCoroutine(EsperarFlujoAutomatico(linea.idSiguiente)); // NPC con delay
+                if (proximoEsJugador) CargarLinea(linea.idSiguiente); 
+                else StartCoroutine(EsperarFlujoAutomatico(linea.idSiguiente)); 
             }
             else
             {
@@ -125,6 +128,8 @@ public class ConversationManager : MonoBehaviour
         if (!string.IsNullOrEmpty(linea.opt2Text)) SetBoton(1, linea.opt2Text, linea.dest2, linea.mod2);
         if (!string.IsNullOrEmpty(linea.opt3Text)) SetBoton(2, linea.opt3Text, linea.dest3, linea.mod3);
         if (!string.IsNullOrEmpty(linea.opt4Text)) SetBoton(3, linea.opt4Text, linea.dest4, linea.mod4);
+        
+        ForzarScrollAlFondo();
     }
 
     private void SetBoton(int indiceBoton, string textoOpcion, int destinoID, string modificadores)
@@ -175,6 +180,7 @@ public class ConversationManager : MonoBehaviour
         personaActual.GuardarEnHistorial(-1); 
         ApagarTodosLosBotones();
         Debug.Log($"[CHAT] Conversación finalizada por completo.");
+        ForzarScrollAlFondo();
     }
 
     private void AplicarCambiosEmocionales(string modTexto)
@@ -231,7 +237,10 @@ public class ConversationManager : MonoBehaviour
 
             CrearEspacioVacio();
         }
+        
         Canvas.ForceUpdateCanvases();
+        
+        ForzarScrollAlFondo();
     }
 
     private void ConfigurarTexto(GameObject go, string texto)
@@ -247,5 +256,23 @@ public class ConversationManager : MonoBehaviour
     {
         GameObject fantasma = new GameObject("EspacioVacioGrid", typeof(RectTransform));
         fantasma.transform.SetParent(content, false);
+    }
+    
+    private void ForzarScrollAlFondo()
+    {
+        if (scrollRectChat != null && gameObject.activeInHierarchy)
+        {
+            StartCoroutine(BajarScrollGarantizado());
+        }
+    }
+
+    private IEnumerator BajarScrollGarantizado()
+    {
+        yield return new WaitForEndOfFrame();
+        
+        if (scrollRectChat != null)
+        {
+            scrollRectChat.verticalNormalizedPosition = 0f;
+        }
     }
 }
