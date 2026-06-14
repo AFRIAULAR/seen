@@ -31,11 +31,20 @@ public class AppBancoManagent : MonoBehaviour
         lCVU.text = "CVU: " + cVU;
         lSaldo.text = "Dinero: " + saldoActual;
     }
+    // Los botones no acepta metodos que no sea void, usar un metodo extra para realizar alguna accion real
+    public void BtnIngresar(float cantidadIngresado)
+    {
+        IngresarDinero(cantidadIngresado);
+    }
     public bool IngresarDinero(float cantidadIngresado)
     {
         saldoActual += cantidadIngresado;
         ActualizarDatos();
         return true;
+    }
+    public void BtnEnviar(float cantidadIngresado)
+    {
+        EnviarDineroCVU(cantidadIngresado);
     }
     public bool EnviarDineroCVU(float cantidadEnviada)
     {

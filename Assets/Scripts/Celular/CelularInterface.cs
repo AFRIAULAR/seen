@@ -10,11 +10,12 @@ public class CelularInterface : MonoBehaviour
     [SerializeField] private GameObject pantallaMusic;
     [SerializeField] private GameObject pantallaCasino;
     [SerializeField] private GameObject pantallaBanco;
+    [SerializeField] private GameObject pantallaAjuste;
     [SerializeField] private GameObject appActual;
     
     private Stack<GameObject> historialPantallasApp = new Stack<GameObject>();
     private GameObject pantallaActual;
-    public GameObject AppActual { get => appActual;}
+    public GameObject AppActual { get => appActual; }
     public Stack<GameObject> HistorialPantallasApp { get => historialPantallasApp; set => historialPantallasApp = value; }
     public static CelularInterface instancia;
     private void Awake()
@@ -82,5 +83,9 @@ public class CelularInterface : MonoBehaviour
     public void AbrirBanco()
     {
         CambiarApp(pantallaBanco);
+    }
+    public void AbrirAjuste()
+    {
+        CambiarApp(pantallaAjuste);
     }
 }

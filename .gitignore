@@ -68,3 +68,26 @@ Library/BurstCache/
 
 # Logs
 *.log
+
+# ========================================================
+# CONFIGURACIÓN DE FMOD - FLUJO DE DISEÑADOR ÚNICO
+# ========================================================
+
+# Forzamos a Git a que guarde los bancos compilados en Unity 
+# para que tu equipo pueda escuchar la música sin tener FMOD.
+!/[Aa]ssets/StreamingAssets/**/*.bank
+!/[Aa]ssets/StreamingAssets/**/*.bank.meta
+
+# Permitir librerías nativas y visuales de FMOD en Unity
+!/[Aa]ssets/Plugins/FMOD/**/lib/*
+!/[Aa]ssets/Gizmos/FMOD/*
+!/[Aa]ssets/Editor Default Resources/FMOD/*
+
+# Ignorar solo la caché temporal de Unity
+/[Aa]ssets/Plugins/FMOD/Cache/*
+
+# Ignorar archivos temporales, logs y preferencias de usuario de FMOD Studio (Raíz)
+*.fspro_user
+.user/
+Cache/
+fmod_editor.log

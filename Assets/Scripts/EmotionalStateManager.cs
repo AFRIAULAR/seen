@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 /// <summary>
 /// VERSIÓN MODIFICADA de EmotionalStateManager.
@@ -21,12 +22,13 @@ public class EmotionalStateManager : MonoBehaviour
     [Range(0, 100)] public int validation = 50;
     [Range(0, 100)] public int identity = 50;
 
-    // [NUEVO] Referencia a la app de música
-    [Header("App de Música")]
-    [Tooltip("Arrastrar aquí el objeto que tiene el script MusicaApp")]
-    [SerializeField] private MusicaApp musicaApp;
-
-    // [NUEVO] Para que el pop-up no se muestre repetidamente
+    [Header("Pop-up de Estrés Alto")]
+    [Tooltip("El panel del pop-up que avisa sobre el estrés alto")]
+    [SerializeField] private GameObject popUpEstres;
+    [Tooltip("Botón 'OK' o 'Aceptar' dentro del pop-up")]
+    [SerializeField] private Button botonAceptarPopUp;
+    [Tooltip("Botón del ícono de música (para activar/desactivar el click)")]
+    [SerializeField] private Button botonIconoMusica;
     private bool popUpMostrado = false;
     private const int UMBRAL_ESTRES = 80;
 
@@ -34,6 +36,10 @@ public class EmotionalStateManager : MonoBehaviour
     {
         UpdateHUD();
         reactiveUI.SetStress(stress);
+        
+        if (botonIconoMusica != null) botonIconoMusica.interactable = false;
+        if (botonAceptarPopUp != null)
+            botonAceptarPopUp.onClick.AddListener(AlAceptarPopUp);
     }
 
     public void ModifyState(int stressChange, int validationChange, int identityChange)
@@ -47,28 +53,36 @@ public class EmotionalStateManager : MonoBehaviour
 
         reactiveUI.SetStress(stress);
 
-        // [NUEVO] Verificar si el estrés superó el umbral
+        // Verificar si el estrés superó el umbral
         VerificarEstresAlto();
 
         UpdateHUD();
     }
 
-    // [NUEVO] Método que revisa si hay que mostrar el pop-up
+    // Método que revisa si hay que mostrar el pop-up
     private void VerificarEstresAlto()
     {
-        if (stress >= UMBRAL_ESTRES && !popUpMostrado && musicaApp != null)
+        if (stress >= UMBRAL_ESTRES && !popUpMostrado)
         {
             popUpMostrado = true;
-            musicaApp.MostrarPopUpEstres();
+            popUpEstres.SetActive(true);
             Debug.Log("[EmotionalStateManager] Estrés superó el 80%, mostrando pop-up de música.");
         }
 
-        // Si el estrés baja del umbral, resetear para que pueda volver a aparecer
-        // (por ejemplo, si usó la app de música y el estrés bajó)
-        if (stress < UMBRAL_ESTRES)
+        // OPTIMIZACIÓN: Solo reseteamos el pop-up si el estrés bajó considerablemente (ej: al 60%)
+        // Esto evita que si oscila entre 79% y 80% te salte el cartel en la cara a cada rato.
+        if (stress < 60)
         {
             popUpMostrado = false;
         }
+    }
+
+    private void AlAceptarPopUp()
+    {
+        if (popUpEstres != null) popUpEstres.SetActive(false);
+
+        if (botonIconoMusica != null) botonIconoMusica.interactable = true;
+        Debug.Log("[MusicaApp] App de música desbloqueada.");
     }
 
     private void UpdateHUD()
@@ -78,4 +92,3 @@ public class EmotionalStateManager : MonoBehaviour
         identityText.text = identity + "%";
     }
 }
-
