@@ -5,6 +5,6 @@ public class MainMenuUI : MonoBehaviour
 {
     public void GoToPhone()
     {
-        SceneManager.LoadScene("Phone");
+        SceneManager.LoadScene("Joel");
     }
 }
