@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2b1bc8c08c7a0614ea17fa6d49c5c5cb
+guid: 3c3a306d373671743b473d039d556022
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -256329436847572505
-    second: Sunflower_0
+      213: 1195458779362535816
+    second: unknown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sunflower_0
+      name: unknown_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 300
-        height: 300
+        x: 7
+        y: 20
+        width: 476
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e9793b3cb5517cf0800000000000000
-      internalID: -256329436847572505
+      spriteID: 889a68f0d6f179010800000000000000
+      internalID: 1195458779362535816
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sunflower_0: -256329436847572505
+      unknown_0: 1195458779362535816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

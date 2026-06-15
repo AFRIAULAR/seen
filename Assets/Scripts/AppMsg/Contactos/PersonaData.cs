@@ -32,8 +32,11 @@ public class PersonaData : ScriptableObject
 
     [Header("Control del Guion")]
     public int idActual = 0; 
-    
     public TextAsset archivoGuionCSV;
+    
+    [Header("Foto de perfil")]
+    public Sprite fotoPerfil;
+
 
     private Dictionary<int, LineaDialogo> diccionarioDialogos = new Dictionary<int, LineaDialogo>();
 

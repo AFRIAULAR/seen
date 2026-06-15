@@ -19,4 +19,5 @@ MonoBehaviour:
   seguridad: 50
   idActual: 0
   archivoGuionCSV: {fileID: 4900000, guid: 8669bcfe7192d0d4d9969fff48dfab9d, type: 3}
+  fotoPerfil: {fileID: 4399295510402085014, guid: b2628c0ed5f95034e8cf0de9e3cec9e8, type: 3}
   historialConversacion: 

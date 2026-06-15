@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: d2c3676d2809c56449fd28f265eb486a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2201467204019558841
+    second: ChatGPT Image 14 jun 2026, 19_17_24_0
+  - first:
+      213: -9056086009658138064
+    second: ChatGPT Image 14 jun 2026, 19_17_24_1
+  - first:
+      213: 6464329882077158996
+    second: ChatGPT Image 14 jun 2026, 19_17_24_2
+  - first:
+      213: -7204556394391275793
+    second: ChatGPT Image 14 jun 2026, 19_17_24_3
+  - first:
+      213: -6284005734083283715
+    second: ChatGPT Image 14 jun 2026, 19_17_24_4
+  - first:
+      213: -3929748100318766802
+    second: ChatGPT Image 14 jun 2026, 19_17_24_5
+  - first:
+      213: 139438801373592229
+    second: ChatGPT Image 14 jun 2026, 19_17_24_6
+  - first:
+      213: 8118476809942859688
+    second: ChatGPT Image 14 jun 2026, 19_17_24_7
+  - first:
+      213: 1763635424904136232
+    second: ChatGPT Image 14 jun 2026, 19_17_24_8
+  - first:
+      213: -3028194325098421930
+    second: ChatGPT Image 14 jun 2026, 19_17_24_9
+  - first:
+      213: -1961284569985154249
+    second: ChatGPT Image 14 jun 2026, 19_17_24_10
+  - first:
+      213: -3995097528962075255
+    second: ChatGPT Image 14 jun 2026, 19_17_24_11
+  - first:
+      213: 4710223713795324251
+    second: ChatGPT Image 14 jun 2026, 19_17_24_12
+  - first:
+      213: 8060615750669266373
+    second: ChatGPT Image 14 jun 2026, 19_17_24_13
+  - first:
+      213: 6627771522424283479
+    second: ChatGPT Image 14 jun 2026, 19_17_24_14
+  - first:
+      213: -7860493544480783941
+    second: ChatGPT Image 14 jun 2026, 19_17_24_15
+  - first:
+      213: -2685892556445719068
+    second: ChatGPT Image 14 jun 2026, 19_17_24_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: foto-perfil_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 506
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0579ebcce2ed18f4a8929f883bb6d1b5
+      internalID: -925043247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1
+        width: 963
+        height: 1022
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18846040c765c4d4ea83f95626a2e3c2
+      internalID: 626450759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_2
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 379
+        width: 402
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06f9f9930092524d939f4842c73ee99
+      internalID: 775639015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 298
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7111e0f66129d48853f92fb028f641
+      internalID: 461503939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 298
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a54857151da854ebd063c18038177d
+      internalID: -22416846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_5
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 297
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42453404461b4e94183876a143831448
+      internalID: -1968863390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_6
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 335
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a08e98628f92647a72e9de555bc4f4
+      internalID: 1014991159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_7
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 298
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865c0f1f3fb5fb445b5775df03518c1b
+      internalID: -5237672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_8
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 335
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce63434c3843f5043b8654389a2f4c34
+      internalID: 2005001671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_9
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 296
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3131163a44ce0c4e880fe43da26c00c
+      internalID: -1009891987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_10
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 297
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022e3145f6cdc7c4dadec2abd2a89258
+      internalID: -177629859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_11
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 298
+        width: 24
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8faeec838a14095479dc71639840a024
+      internalID: 1158963540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 297
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2b9d19d3eaa9e4da84af33f2bb4926
+      internalID: -1005601464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_13
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 296
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4117d7df5650e664c879967da79d9818
+      internalID: 1477531951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_14
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 282
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de54979069c970c479993404c7dae7d4
+      internalID: -1966676990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_15
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 296
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae65a7c801aa6e43a9b1dbb1a3c39f0
+      internalID: 874258939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foto-perfil_16
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 297
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928a8f34156cbd84db3b3a75c93c0e5d
+      internalID: 646625838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f80a6950c3ca24c498a64535a8de2582
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: True
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      foto-perfil_0: -925043247
+      foto-perfil_1: 626450759
+      foto-perfil_10: -177629859
+      foto-perfil_11: 1158963540
+      foto-perfil_12: -1005601464
+      foto-perfil_13: 1477531951
+      foto-perfil_14: -1966676990
+      foto-perfil_15: 874258939
+      foto-perfil_16: 646625838
+      foto-perfil_2: 775639015
+      foto-perfil_3: 461503939
+      foto-perfil_4: -22416846
+      foto-perfil_5: -1968863390
+      foto-perfil_6: 1014991159
+      foto-perfil_7: -5237672
+      foto-perfil_8: 2005001671
+      foto-perfil_9: -1009891987
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

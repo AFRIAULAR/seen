@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using System;
-
+using UnityEngine.UI;
 public class PanelChatScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [Header("Configuración del Chat")]
     [SerializeField] private PersonaData personaData;
+    [SerializeField] private Image fotoImage;
 
     public string nombreChat;
 
@@ -40,6 +41,11 @@ public class PanelChatScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 ultimoMensajeText.text = "No hay mensajes recientes.";
             }
         }
+
+        if (fotoImage != null && persona.fotoPerfil != null)
+            {
+                fotoImage.sprite = persona.fotoPerfil;
+            }
     }
 
     public void OnPointerEnter(PointerEventData eventData) { }

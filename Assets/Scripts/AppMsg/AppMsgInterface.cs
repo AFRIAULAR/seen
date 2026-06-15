@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AppMsgInterface : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AppMsgInterface : MonoBehaviour
     [Header("Chat")]
     [SerializeField] private GameObject pantallaChat;
     [SerializeField] private TextMeshProUGUI nombreContacto;
+    [SerializeField] private Image fotoContacto;
 
     [Header("Referencias del Sistema Narrativo")]
     [SerializeField] private ConversationManager conversationManager;
@@ -63,6 +65,11 @@ public class AppMsgInterface : MonoBehaviour
         if (conversationManager != null)
         {
             conversationManager.AbrirChatConPersonaje(persona);
+        }
+
+        if (fotoContacto != null && persona.fotoPerfil != null)
+        {
+            fotoContacto.sprite = persona.fotoPerfil;
         }
     }
 }
