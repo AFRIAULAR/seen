@@ -46,16 +46,27 @@ public class CasinoApp : MonoBehaviour
     private void Start()
     {
         ActualizarUI();
-        if (panelCodigoSecreto != null) panelCodigoSecreto.SetActive(false);
 
-        if (botonRojo != null)   botonRojo.onClick.AddListener(() => SeleccionarColor("Rojo"));
-        if (botonNegro != null)  botonNegro.onClick.AddListener(() => SeleccionarColor("Negro"));
-        if (botonVerde != null)  botonVerde.onClick.AddListener(() => SeleccionarColor("Verde"));
-        if (botonGirar != null)  botonGirar.onClick.AddListener(GirarRuleta);
-        if (botonIngresarDinero != null)  botonIngresarDinero.onClick.AddListener(() => CargarDinero(100));
-        if (botonRetirarDinero != null)  botonRetirarDinero.onClick.AddListener(() => RetirarDinero(100));
-        if (botonAbrirPanelCodigo != null) botonAbrirPanelCodigo.onClick.AddListener(AbrirPanelCodigo);
-        if (botonConfirmarCodigo != null)  botonConfirmarCodigo.onClick.AddListener(ConfirmarCodigo);
+        if (panelCodigoSecreto != null)
+            panelCodigoSecreto.SetActive(false);
+
+        if (botonGirar != null)
+            botonGirar.gameObject.SetActive(false);
+
+        if (botonRojo != null) botonRojo.onClick.AddListener(() => SeleccionarColor("Rojo"));
+        if (botonNegro != null) botonNegro.onClick.AddListener(() => SeleccionarColor("Negro"));
+        if (botonVerde != null) botonVerde.onClick.AddListener(() => SeleccionarColor("Verde"));
+
+        if (botonGirar != null) botonGirar.onClick.AddListener(GirarRuleta);
+
+        if (botonIngresarDinero != null) botonIngresarDinero.onClick.AddListener(() => CargarDinero(100));
+        if (botonRetirarDinero != null) botonRetirarDinero.onClick.AddListener(() => RetirarDinero(100));
+
+        if (botonAbrirPanelCodigo != null)
+            botonAbrirPanelCodigo.onClick.AddListener(AbrirPanelCodigo);
+
+        if (botonConfirmarCodigo != null)
+            botonConfirmarCodigo.onClick.AddListener(ConfirmarCodigo);
     }
 
     // ── SELECCION DE COLOR ────────────────────────────────────────
@@ -116,35 +127,46 @@ public class CasinoApp : MonoBehaviour
     // ── CODIGO SECRETO ────────────────────────────────────────────
     private void AbrirPanelCodigo()
     {
-        if (panelCodigoSecreto != null) panelCodigoSecreto.SetActive(true);
-        if (textoMensajeCodigo != null) textoMensajeCodigo.text = "";
+        if (botonAbrirPanelCodigo != null)
+            botonAbrirPanelCodigo.gameObject.SetActive(false);
+
+        if (panelCodigoSecreto != null)
+            panelCodigoSecreto.SetActive(true);
+
+        if (textoMensajeCodigo != null)
+            textoMensajeCodigo.text = "";
+
+        if (inputCodigo != null)
+            inputCodigo.text = "";
     }
 
-    private void ConfirmarCodigo()
+        private void ConfirmarCodigo()
     {
         if (inputCodigo == null) return;
+
         string ingresado = inputCodigo.text.Trim().ToUpper();
 
         if (ingresado == CODIGO_MARIO)
         {
             dineroDesbloqueado = true;
             dineroJugador += 100;
-            if (textoMensajeCodigo != null) textoMensajeCodigo.text = "Codigo correcto. Recibis $100!";
+
+            if (textoMensajeCodigo != null)
+                textoMensajeCodigo.text = "Código correcto. Recibís $100!";
+
             if (panelCodigoSecreto != null)
-                StartCoroutine(CerrarPanelDespues(2f));
+                panelCodigoSecreto.SetActive(false);
+
+            if (botonGirar != null)
+                botonGirar.gameObject.SetActive(true);
+
+            ActualizarUI();
         }
         else
         {
-            if (textoMensajeCodigo != null) textoMensajeCodigo.text = "Codigo incorrecto.";
+            if (textoMensajeCodigo != null)
+                textoMensajeCodigo.text = "Código incorrecto.";
         }
-
-        ActualizarUI();
-    }
-
-    private IEnumerator CerrarPanelDespues(float segundos)
-    {
-        yield return new WaitForSeconds(segundos);
-        if (panelCodigoSecreto != null) panelCodigoSecreto.SetActive(false);
     }
 
     // ── UI ────────────────────────────────────────────────────────
