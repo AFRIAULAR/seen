@@ -35,7 +35,8 @@ public class EmotionalStateManager : MonoBehaviour
     private void Start()
     {
         UpdateHUD();
-        reactiveUI.SetStress(stress);
+       // reactiveUI.SetStress(stress);
+       reactiveUI.SetEmotionalState(stress, validation, identity);
         
         if (botonIconoMusica != null) botonIconoMusica.interactable = false;
         if (botonAceptarPopUp != null)
@@ -51,7 +52,8 @@ public class EmotionalStateManager : MonoBehaviour
         Debug.Log(
         $"Stress: {stress} | Validation: {validation} | Identity: {identity}");
 
-        reactiveUI.SetStress(stress);
+        //reactiveUI.SetStress(stress);
+        reactiveUI.SetEmotionalState(stress, validation, identity);
 
         // Verificar si el estrés superó el umbral
         VerificarEstresAlto();

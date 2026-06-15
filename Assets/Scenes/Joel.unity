@@ -18862,9 +18862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037f222eed63b8246b2238c68d144a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReactiveUIManager
-  stressOverlay: {fileID: 1463772308}
+  validationDarkOverlay: {fileID: 1463772308}
   blurOverlay: {fileID: 1507521824}
-  noiseOverlay: {fileID: 1298918225}
   glitchOverlay: {fileID: 368244099}
   volume: {fileID: 1759374699}
 --- !u!4 &1799034668

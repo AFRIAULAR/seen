@@ -6,9 +6,8 @@ using UnityEngine.Rendering.Universal;
 public class ReactiveUIManager : MonoBehaviour
 {
     [Header("UI Overlays")]
-    [SerializeField] private Image stressOverlay;
+    [SerializeField] private Image validationDarkOverlay;
     [SerializeField] private Image blurOverlay;
-    [SerializeField] private Image noiseOverlay;
     [SerializeField] private Image glitchOverlay;
 
     [Header("Post Processing")]
@@ -18,7 +17,7 @@ public class ReactiveUIManager : MonoBehaviour
     private ChromaticAberration chromaticAberration;
     private FilmGrain filmGrain;
 
-    private int currentStress;
+    private int currentIdentity;
 
     private void Awake()
     {
@@ -32,7 +31,8 @@ public class ReactiveUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentStress > 80)
+        // Identidad baja = glitch
+        if (currentIdentity < 30)
         {
             float glitchAlpha = Mathf.PingPong(Time.time * 10f, 1f) * 0.45f;
             SetAlpha(glitchOverlay, glitchAlpha);
@@ -43,31 +43,41 @@ public class ReactiveUIManager : MonoBehaviour
         }
     }
 
-    public void SetStress(int stress)
+    public void SetEmotionalState(int stress, int validation, int identity)
     {
-        currentStress = Mathf.Clamp(stress, 0, 100);
+        stress = Mathf.Clamp(stress, 0, 100);
+        validation = Mathf.Clamp(validation, 0, 100);
+        identity = Mathf.Clamp(identity, 0, 100);
 
-        SetAlpha(stressOverlay, currentStress / 100f * 0.75f);
-        SetAlpha(blurOverlay, currentStress / 100f * 0.35f);
+        currentIdentity = identity;
 
-        float noiseAlpha = currentStress > 60
-            ? (currentStress - 60) / 40f * 0.35f
-            : 0f;
-
-        SetAlpha(noiseOverlay, noiseAlpha);
-
+        // 🔥 Estrés: vignette + distorsión de color
         if (vignette != null)
-            vignette.intensity.value = currentStress / 100f * 0.55f;
+            vignette.intensity.value = stress / 100f * 0.55f;
 
         if (chromaticAberration != null)
-            chromaticAberration.intensity.value = currentStress > 60
-                ? (currentStress - 60) / 40f * 0.5f
+            chromaticAberration.intensity.value = stress > 50
+                ? (stress - 50) / 50f * 0.6f
                 : 0f;
 
         if (filmGrain != null)
-            filmGrain.intensity.value = currentStress > 70
-                ? (currentStress - 70) / 30f * 0.8f
+            filmGrain.intensity.value = stress > 60
+                ? (stress - 60) / 40f * 0.7f
                 : 0f;
+
+        // ⭐ Validación baja: oscurecimiento
+        float validationDarkness = validation < 50
+            ? (50 - validation) / 50f * 0.65f
+            : 0f;
+
+        SetAlpha(validationDarkOverlay, validationDarkness);
+
+        // 🪞 Identidad baja: blur leve
+        float blurAlpha = identity < 50
+            ? (50 - identity) / 50f * 0.35f
+            : 0f;
+
+        SetAlpha(blurOverlay, blurAlpha);
     }
 
     private void SetAlpha(Image img, float alpha)
