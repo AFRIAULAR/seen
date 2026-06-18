@@ -80,4 +80,22 @@ public class AudioManagent : MonoBehaviour
             default:               return default;
         }
     }
+
+    /// <summary>
+    /// Envía los estados emocionales directamente a los parámetros globales de FMOD.
+    /// FMOD se encargará de aplicar automáticamente los efectos al canal de música.
+    /// </summary>
+    public void ActualizarParametrosEmocionales(int stress, int validation, int identity)
+    {
+        // Aseguramos que los valores vayan de 0 a 100 (o adaptalo si usas rango 0 a 1)
+        float f_stress = Mathf.Clamp(stress, 0, 100);
+        float f_validation = Mathf.Clamp(validation, 0, 100);
+        float f_identity = Mathf.Clamp(identity, 0, 100);
+
+        // Mandamos los valores de forma global a FMOD Studio
+        // IMPORTANTE: Los strings deben coincidir EXACTAMENTE con FMOD
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Estres", f_stress);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Validacion", f_validation);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Identidad", f_identity);
+    }
 }

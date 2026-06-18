@@ -36,7 +36,7 @@ public class EmotionalStateManager : MonoBehaviour
     {
         UpdateHUD();
        // reactiveUI.SetStress(stress);
-       reactiveUI.SetEmotionalState(stress, validation, identity);
+        reactiveUI.SetEmotionalState(stress, validation, identity);
         
         if (botonIconoMusica != null) botonIconoMusica.interactable = false;
         if (botonAceptarPopUp != null)
