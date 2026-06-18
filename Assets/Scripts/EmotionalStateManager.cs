@@ -61,6 +61,28 @@ public class EmotionalStateManager : MonoBehaviour
         UpdateHUD();
     }
 
+    /// <summary>
+    /// Establece un valor absoluto directo para las variables emocionales (Para el debug)
+    /// </summary>
+    public void OverrideState(int newStress, int newValidation, int newIdentity)
+    {
+        stress = Mathf.Clamp(newStress, 0, 100);
+        validation = Mathf.Clamp(newValidation, 0, 100);
+        identity = Mathf.Clamp(newIdentity, 0, 100);
+
+        Debug.Log($"[Debug Override] Stress: {stress} | Validation: {validation} | Identity: {identity}");
+
+        // Disparamos la actualización de FMOD y Post-processing
+        if (reactiveUI != null)
+        {
+            reactiveUI.SetEmotionalState(stress, validation, identity);
+        }
+
+        VerificarEstresAlto();
+
+        UpdateHUD();
+    }
+
     // Método que revisa si hay que mostrar el pop-up
     private void VerificarEstresAlto()
     {
