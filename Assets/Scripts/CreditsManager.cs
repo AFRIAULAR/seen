@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CreditsManager : MonoBehaviour
 {
-    [Header("Paneles")]
+    [Header("Paneles y Contenedores")]
     [SerializeField] private GameObject panelGallery;
     [SerializeField] private GameObject panelCredits;
+    [Tooltip("El contenedor o máscara transparente que limita la vista de los créditos.")]
+    [SerializeField] private RectTransform viewportContenedor; 
 
     [Header("Créditos")]
     [SerializeField] private RectTransform creditsContent;
@@ -14,14 +17,14 @@ public class CreditsManager : MonoBehaviour
 
     [Header("Configuración")]
     [SerializeField] private float velocidad = 45f;
-    [SerializeField] private float posicionInicialY = -700f;
-    [SerializeField] private float posicionFinalY = 900f;
     [SerializeField] private string nombreEscenaMenu = "Menu";
 
     [Header("UI fija")]
     [SerializeField] private GameObject interfazFija;
 
-    private bool reproduciendo = false;
+    private float posicionInicialY;
+    private float posicionFinalY;
+    private Coroutine corrutinaCreditos;
 
     private void Start()
     {
@@ -32,49 +35,62 @@ public class CreditsManager : MonoBehaviour
             botonSalir.gameObject.SetActive(false);
     }
 
-    private void Update()
+    public void AbrirCreditos()
     {
-        if (!reproduciendo || creditsContent == null) return;
+        Debug.Log("AbrirCreditos llamado con Corrutina y cálculo adaptativo.");
 
-        creditsContent.anchoredPosition += Vector2.up * velocidad * Time.deltaTime;
+        if (panelCredits != null) panelCredits.SetActive(true);
+        if (panelGallery != null) panelGallery.SetActive(false);
+        if (interfazFija != null) interfazFija.SetActive(false);
+        if (botonSalir != null) botonSalir.gameObject.SetActive(false);
 
-        if (creditsContent.anchoredPosition.y >= posicionFinalY)
+        if (viewportContenedor != null && creditsContent != null)
         {
-            reproduciendo = false;
+            Canvas.ForceUpdateCanvases();
 
-            if (botonSalir != null)
-                botonSalir.gameObject.SetActive(true);
+            float altoViewport = viewportContenedor.rect.height;
+            float altoTexto = creditsContent.rect.height;
+
+            posicionInicialY = -(altoViewport / 2f) - (altoTexto / 2f);
+            posicionFinalY = (altoViewport / 2f) + (altoTexto / 2f);
+
+            creditsContent.anchoredPosition = new Vector2(creditsContent.anchoredPosition.x, posicionInicialY);
+            
+            if (corrutinaCreditos != null)
+            {
+                StopCoroutine(corrutinaCreditos);
+            }
+
+            corrutinaCreditos = StartCoroutine(MoverCreditos());
+        }
+        else
+        {
+            Debug.LogError("[CreditsManager] Falta asignar el Viewport o el CreditsContent en el Inspector.");
         }
     }
 
-    public void AbrirCreditos()
-{
-    Debug.Log("AbrirCreditos llamado");
+    private IEnumerator MoverCreditos()
+    {
+        while (creditsContent.anchoredPosition.y < posicionFinalY)
+        {
+            creditsContent.anchoredPosition += Vector2.up * velocidad * Time.deltaTime;
 
-    if (panelCredits != null)
-        panelCredits.SetActive(true);
-    else
-        Debug.LogError("PanelCredits no asignado");
+            yield return null;
+        }
 
-    if (panelGallery != null)
-        panelGallery.SetActive(false);
+        if (botonSalir != null)
+            botonSalir.gameObject.SetActive(true);
 
-    if (botonSalir != null)
-        botonSalir.gameObject.SetActive(false);
-
-    if (creditsContent != null)
-        creditsContent.anchoredPosition = new Vector2(
-            creditsContent.anchoredPosition.x,
-            posicionInicialY
-        );
-    if (interfazFija != null)
-    interfazFija.SetActive(false);
-
-    reproduciendo = true;
-}
+        corrutinaCreditos = null;
+    }
 
     public void SalirAlMenu()
     {
-        SceneManager.LoadScene("Menu");
+        if (corrutinaCreditos != null)
+        {
+            StopCoroutine(corrutinaCreditos);
+        }
+
+        SceneManager.LoadScene(nombreEscenaMenu);
     }
 }

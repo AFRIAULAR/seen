@@ -22,29 +22,39 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private CanvasGroup miCanvasGroup;
     private Coroutine corrutinaAnimacion;
 
-    private Vector3 posicionOriginalTope;
     private Vector3 escalaOriginalTope;
-    
     private Vector3 escalaOcultaMinima;
-    private Vector3 posicionOcultaMinima;
 
     void Awake()
     {
         miRectTransform = GetComponent<RectTransform>();
         miCanvasGroup = GetComponent<CanvasGroup>();
 
-        posicionOriginalTope = miRectTransform.localPosition;
+        // Forzamos el pivote correcto según la dirección elegida ANTES de guardar la escala
+        AjustarPivoteSegunDireccion();
+
         escalaOriginalTope = miRectTransform.localScale;
-
         escalaOcultaMinima = CalcularEscalaOculta();
-        posicionOcultaMinima = CalcularPosicionOculta();
 
+        // Configuración inicial (Oculto)
         miCanvasGroup.alpha = 0f;
         miCanvasGroup.blocksRaycasts = true; 
         miCanvasGroup.interactable = false; 
         
         miRectTransform.localScale = escalaOcultaMinima;
-        miRectTransform.localPosition = posicionOcultaMinima;
+    }
+
+    private void AjustarPivoteSegunDireccion()
+    {
+        // Modificar el pivote por código puede mover el elemento si no se hace con cuidado.
+        // Lo ideal es que configures el pivote a mano en el inspector, pero este switch lo asegura:
+        switch (direccion)
+        {
+            case DireccionDespliegue.Arriba:    miRectTransform.pivot = new Vector2(0.5f, 0f);  break;
+            case DireccionDespliegue.Abajo:     miRectTransform.pivot = new Vector2(0.5f, 1f);  break;
+            case DireccionDespliegue.Izquierda: miRectTransform.pivot = new Vector2(1f, 0.5f); break;
+            case DireccionDespliegue.Derecha:   miRectTransform.pivot = new Vector2(0f, 0.5f); break;
+        }
     }
 
     private Vector3 CalcularEscalaOculta()
@@ -64,55 +74,17 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
     }
 
-    /// <summary>
-    /// Calcula el sutil desfase de posición necesario para que el panel aparente 
-    /// encogerse hacia la dirección correcta usando tu propio pivote como base.
-    /// </summary>
-    private Vector3 CalcularPosicionOculta()
-    {
-        // Obtenemos el tamaño real en píxeles del panel
-        float ancho = miRectTransform.rect.width * escalaOriginalTope.x;
-        float alto = miRectTransform.rect.height * escalaOriginalTope.y;
-        
-        float factorReduccionY = alto * (1f - escalaMinimaOculta);
-        float factorReduccionX = ancho * (1f - escalaMinimaOculta);
-
-        Vector3 offset = Vector3.zero;
-
-        switch (direccion)
-        {
-            case DireccionDespliegue.Arriba:
-                // Se encoge hacia su base inferior
-                offset.y = -factorReduccionY * (1f - miRectTransform.pivot.y);
-                break;
-            case DireccionDespliegue.Abajo:
-                // Se encoge hacia su tope superior
-                offset.y = factorReduccionY * miRectTransform.pivot.y;
-                break;
-            case DireccionDespliegue.Izquierda:
-                // Se encoge hacia su borde derecho
-                offset.x = -factorReduccionX * (1f - miRectTransform.pivot.x);
-                break;
-            case DireccionDespliegue.Derecha:
-                // Se encoge hacia su borde izquierdo
-                offset.x = factorReduccionX * miRectTransform.pivot.x;
-                break;
-        }
-
-        return posicionOriginalTope + offset;
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        CambiarEstado(1f, escalaOriginalTope, posicionOriginalTope, true);
+        CambiarEstado(1f, escalaOriginalTope, true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        CambiarEstado(0f, escalaOcultaMinima, posicionOcultaMinima, false);
+        CambiarEstado(0f, escalaOcultaMinima, false);
     }
 
-    private void CambiarEstado(float alphaDestino, Vector3 escalaDestino, Vector3 posicionDestino, bool activarInteracciones)
+    private void CambiarEstado(float alphaDestino, Vector3 escalaDestino, bool activarInteracciones)
     {
         miCanvasGroup.interactable = activarInteracciones;
 
@@ -121,18 +93,17 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
             StopCoroutine(corrutinaAnimacion);
         }
 
-        corrutinaAnimacion = StartCoroutine(AnimarAperturaSuave(alphaDestino, escalaDestino, posicionDestino));
+        corrutinaAnimacion = StartCoroutine(AnimarAperturaSuave(alphaDestino, escalaDestino));
     }
 
-    private IEnumerator AnimarAperturaSuave(float alphaDestino, Vector3 escalaDestino, Vector3 posicionDestino)
+    private IEnumerator AnimarAperturaSuave(float alphaDestino, Vector3 escalaDestino)
     {
         miCanvasGroup.blocksRaycasts = true;
         float distanciaInicial = Vector3.Distance(miRectTransform.localScale, escalaDestino);
 
-        while (Vector3.Distance(miRectTransform.localScale, escalaDestino) > 0.001f || Vector3.Distance(miRectTransform.localPosition, posicionDestino) > 0.01f)
+        while (Vector3.Distance(miRectTransform.localScale, escalaDestino) > 0.001f)
         {
             miRectTransform.localScale = Vector3.Lerp(miRectTransform.localScale, escalaDestino, Time.deltaTime * velocidadCambio);
-            miRectTransform.localPosition = Vector3.Lerp(miRectTransform.localPosition, posicionDestino, Time.deltaTime * velocidadCambio);
             
             float distanceActual = Vector3.Distance(miRectTransform.localScale, escalaDestino);
             float progreso = distanciaInicial > 0f ? (1f - (distanceActual / distanciaInicial)) : 1f;
@@ -143,7 +114,6 @@ public class UIDesplazamiento : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
 
         miRectTransform.localScale = escalaDestino;
-        miRectTransform.localPosition = posicionDestino;
         miCanvasGroup.alpha = alphaDestino;
     }
 }
