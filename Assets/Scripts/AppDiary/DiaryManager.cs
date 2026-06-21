@@ -95,6 +95,11 @@ public class DiaryManager : MonoBehaviour
 
         if (botonReflexionar != null)
             botonReflexionar.interactable = false;
+
+        if (MemoryManager.Instance != null)
+            {
+                MemoryManager.Instance.MarcarDiarioUsado();
+            }
     }
 
     private string ObtenerTextoEntrada(int option)

@@ -16,6 +16,7 @@ public class EmotionalStateManager : MonoBehaviour
     [SerializeField] private TMP_Text stressText;
     [SerializeField] private TMP_Text validationText;
     [SerializeField] private TMP_Text identityText;
+    [SerializeField] private Image stressBarFill;
 
     [Header("Estados emocionales")]
     [Range(0, 100)] public int stress = 20;
@@ -37,7 +38,9 @@ public class EmotionalStateManager : MonoBehaviour
         UpdateHUD();
        // reactiveUI.SetStress(stress);
         reactiveUI.SetEmotionalState(stress, validation, identity);
-        
+        if (stressText != null)
+        stressText.text = stress + "%";
+
         if (botonIconoMusica != null) botonIconoMusica.interactable = false;
         if (botonAceptarPopUp != null)
             botonAceptarPopUp.onClick.AddListener(AlAceptarPopUp);
@@ -114,5 +117,33 @@ public class EmotionalStateManager : MonoBehaviour
         stressText.text = stress + "%";
         validationText.text = validation + "%";
         identityText.text = identity + "%";
+        if (stressBarFill != null)
+        stressBarFill.fillAmount = stress / 100f;
+
+        if (stress < 30)
+        {
+            stressBarFill.color = new Color(1f, 0.95f, 0.3f); // amarillo suave
+        }
+        else if (stress < 60)
+        {
+            stressBarFill.color = new Color(1f, 0.75f, 0f); // amarillo intenso
+        }
+        else if (stress < 80)
+        {
+            stressBarFill.color = new Color(1f, 0.45f, 0f); // naranja
+        }
+        else
+        {
+            stressBarFill.color = new Color(0.85f, 0f, 0f); // rojo oscuro
+        }
+    }
+
+    public void SetStressFromSlider(float value)
+    {
+        stress = Mathf.RoundToInt(value);
+        UpdateHUD();
+
+        if (reactiveUI != null)
+            reactiveUI.SetEmotionalState(stress, validation, identity);
     }
 }

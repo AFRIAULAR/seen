@@ -81,6 +81,6 @@ public class MainMenuUI : MonoBehaviour
 
     public void GoToPhone()
     {
-        SceneManager.LoadScene("Joel 2");
+        SceneManager.LoadScene("Afri3");
     }
 }

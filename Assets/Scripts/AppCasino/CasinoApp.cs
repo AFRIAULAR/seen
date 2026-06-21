@@ -122,6 +122,11 @@ public class CasinoApp : MonoBehaviour
 
         colorSeleccionado = "";
         ActualizarUI();
+
+        if (MemoryManager.Instance != null)
+        {
+            MemoryManager.Instance.MarcarCasinoJugado();
+        }
     }
 
     // ── CODIGO SECRETO ────────────────────────────────────────────
@@ -166,6 +171,11 @@ public class CasinoApp : MonoBehaviour
         {
             if (textoMensajeCodigo != null)
                 textoMensajeCodigo.text = "Código incorrecto.";
+        }
+
+        if (MemoryManager.Instance != null)
+        {
+            MemoryManager.Instance.MarcarCodigoCasinoIngresado();
         }
     }
 

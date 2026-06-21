@@ -24,6 +24,11 @@ public class AppBancoManagent : MonoBehaviour
     void Start()
     {
         ActualizarDatos();
+        
+        if (MemoryManager.Instance != null)
+        {
+            MemoryManager.Instance.MarcarBancoVisitado();
+        }
     }
     public void ActualizarDatos()
     {

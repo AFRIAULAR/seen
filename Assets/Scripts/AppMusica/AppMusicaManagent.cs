@@ -115,7 +115,10 @@ public class AppMusicaManagent : MonoBehaviour
         if (estaReproduciendo) return;
 
         estaReproduciendo = true;
-
+        if (MemoryManager.Instance != null)
+        {
+            MemoryManager.Instance.MarcarMusicaEscuchada();
+        }
         musicaEmitter.EventInstance.getPaused(out bool estaPausadoEnFMOD);
 
         if (estaPausadoEnFMOD)
@@ -134,6 +137,8 @@ public class AppMusicaManagent : MonoBehaviour
 
         if (corrutinaProgreso != null) StopCoroutine(corrutinaProgreso);
         corrutinaProgreso = StartCoroutine(ActualizarSliderProgreso());
+
+        
     }
 
     public void CambiarCancion(int paso)
