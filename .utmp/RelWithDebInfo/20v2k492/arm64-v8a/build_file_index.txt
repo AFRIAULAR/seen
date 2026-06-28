@@ -1,0 +1,3 @@
+C:\Users\ranin\Desktop\Tareas\Lic. desarrollo de videojuegos\DLudico1\seen\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\ranin\Desktop\Tareas\Lic. desarrollo de videojuegos\DLudico1\seen\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\CMakeLists.txt
+C:\Users\ranin\Desktop\Tareas\Lic. desarrollo de videojuegos\DLudico1\seen\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

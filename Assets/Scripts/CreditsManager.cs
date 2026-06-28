@@ -22,6 +22,8 @@ public class CreditsManager : MonoBehaviour
     [Header("UI fija")]
     [SerializeField] private GameObject interfazFija;
 
+    [SerializeField] private AppMusicaManagent appmusica;
+
     private float posicionInicialY;
     private float posicionFinalY;
     private Coroutine corrutinaCreditos;
@@ -37,6 +39,7 @@ public class CreditsManager : MonoBehaviour
 
     public void AbrirCreditos()
     {
+        GameManagent.gameInstancia.DetenerAmbiente();
         Debug.Log("AbrirCreditos llamado con Corrutina y cálculo adaptativo.");
 
         if (panelCredits != null) panelCredits.SetActive(true);
@@ -86,6 +89,7 @@ public class CreditsManager : MonoBehaviour
 
     public void SalirAlMenu()
     {
+        appmusica.DetenerMusica(); 
         if (corrutinaCreditos != null)
         {
             StopCoroutine(corrutinaCreditos);
